@@ -4,6 +4,7 @@ import { CssBaseline, Box } from '@mui/material';
 import { theme } from './theme';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
+import HeroGameSection from './components/HeroGameSection';
 import ServicesSection from './components/ServicesSection';
 import AISolutionsSection from './components/AISolutionsSection';
 import AutomationSection from './components/AutomationSection';
@@ -18,6 +19,7 @@ const App: React.FC = () => {
                 <Navbar />
                 <main>
                     <HeroSection />
+                    <HeroGameSection />
                     <ServicesSection />
                     <AISolutionsSection />
                     <AutomationSection />
