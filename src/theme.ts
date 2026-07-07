@@ -4,22 +4,22 @@ export const theme = createTheme({
     palette: {
         mode: 'dark',
         primary: {
-            main: '#00D4FF',
-            light: '#4DD4FF',
-            dark: '#0099CC',
+            main: '#8b5cf6',
+            light: '#c8b8ff',
+            dark: '#5a34b0',
         },
         secondary: {
-            main: '#FF6B6B',
-            light: '#FF8E8E',
-            dark: '#E53E3E',
+            main: '#22d3ee',
+            light: '#8beeff',
+            dark: '#0d7f93',
         },
         background: {
-            default: '#0A0A0A',
-            paper: '#1A1A1A',
+            default: '#090c16',
+            paper: '#0d1120',
         },
         text: {
-            primary: '#FFFFFF',
-            secondary: '#B0B0B0',
+            primary: '#eef0f6',
+            secondary: '#9aa3b8',
         },
         success: {
             main: '#4CAF50',
@@ -32,36 +32,42 @@ export const theme = createTheme({
         },
     },
     typography: {
-        fontFamily: '"Ubuntu", "Roboto", "Helvetica", "Arial", sans-serif',
+        fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
         h1: {
-            fontWeight: 700,
+            fontFamily: '"Sora", sans-serif',
+            fontWeight: 800,
             fontSize: '4rem',
-            lineHeight: 1.1,
+            lineHeight: 1.06,
             letterSpacing: '-0.02em',
         },
         h2: {
-            fontWeight: 600,
-            fontSize: '3rem',
+            fontFamily: '"Sora", sans-serif',
+            fontWeight: 800,
+            fontSize: '2.625rem',
             lineHeight: 1.2,
             letterSpacing: '-0.01em',
         },
         h3: {
-            fontWeight: 600,
+            fontFamily: '"Sora", sans-serif',
+            fontWeight: 700,
             fontSize: '2.25rem',
             lineHeight: 1.3,
         },
         h4: {
-            fontWeight: 500,
+            fontFamily: '"Sora", sans-serif',
+            fontWeight: 700,
             fontSize: '1.75rem',
             lineHeight: 1.4,
         },
         h5: {
-            fontWeight: 500,
+            fontFamily: '"Sora", sans-serif',
+            fontWeight: 700,
             fontSize: '1.5rem',
             lineHeight: 1.4,
         },
         h6: {
-            fontWeight: 500,
+            fontFamily: '"Sora", sans-serif',
+            fontWeight: 700,
             fontSize: '1.25rem',
             lineHeight: 1.5,
         },
@@ -86,23 +92,20 @@ export const theme = createTheme({
         MuiButton: {
             styleOverrides: {
                 root: {
-                    borderRadius: 8,
+                    borderRadius: 999,
                     padding: '12px 24px',
                     fontWeight: 600,
                     textTransform: 'none',
                     boxShadow: 'none',
-                    '&:hover': {
-                        boxShadow: '0 4px 12px rgba(0, 212, 255, 0.3)',
-                    },
                 },
             },
         },
         MuiCard: {
             styleOverrides: {
                 root: {
-                    borderRadius: 16,
-                    background: 'linear-gradient(145deg, #1A1A1A 0%, #2A2A2A 100%)',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    borderRadius: 20,
+                    background: 'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
                 },
             },
         },

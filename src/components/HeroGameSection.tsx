@@ -227,8 +227,8 @@ const HeroGameSection: React.FC = () => {
                     justifyContent: 'center',
                 }}
             >
-                {/* Left: marketing column */}
-                <div style={{ flex: '1 1 380px', minWidth: 320, maxWidth: 480, display: 'flex', flexDirection: 'column', gap: 20 }}>
+                {/* Marketing column (first) */}
+                <div style={{ order: 1, flex: '1 1 380px', minWidth: 320, maxWidth: 480, display: 'flex', flexDirection: 'column', gap: 20 }}>
                     <div
                         style={{
                             display: 'inline-flex',
@@ -284,9 +284,10 @@ const HeroGameSection: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Right: game card */}
+                {/* Game card (second) */}
                 <div
                     style={{
+                        order: 2,
                         flex: '1 1 420px',
                         minWidth: 340,
                         maxWidth: 460,

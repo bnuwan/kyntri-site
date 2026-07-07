@@ -11,9 +11,9 @@ html {
 }
 
 body {
-  font-family: 'Ubuntu', sans-serif;
-  background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
-  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  background: #090c16;
+  color: #eef0f6;
   overflow-x: hidden;
 }
 
@@ -33,11 +33,6 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #4DD4FF 0%, #00D4FF 100%);
-}
-
-/* Smooth animations */
-* {
-  transition: all 0.3s ease;
 }
 
 /* Gradient text utility */

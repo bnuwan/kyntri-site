@@ -4,11 +4,12 @@ import { CssBaseline, Box } from '@mui/material';
 import { theme } from './theme';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
-import HeroGameSection from './components/HeroGameSection';
 import ServicesSection from './components/ServicesSection';
 import AISolutionsSection from './components/AISolutionsSection';
 import AutomationSection from './components/AutomationSection';
-import ContactSection from './components/ContactSection';
+import HeroGameSection from './components/HeroGameSection';
+import AboutSection from './components/AboutSection';
+import CTASection from './components/CTASection';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
@@ -23,7 +24,8 @@ const App: React.FC = () => {
                     <ServicesSection />
                     <AISolutionsSection />
                     <AutomationSection />
-                    <ContactSection />
+                    <AboutSection />
+                    <CTASection />
                 </main>
                 <Footer />
             </Box>
@@ -32,6 +34,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
-
-

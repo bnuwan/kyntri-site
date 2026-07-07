@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
-    AppBar,
     Box,
     Button,
     Drawer,
@@ -8,53 +7,42 @@ import {
     List,
     ListItem,
     ListItemText,
-    Toolbar,
     Typography,
-
 } from '@mui/material';
-import {motion} from 'framer-motion';
-import {AutoAwesome, Close as CloseIcon, Code, ContactMail, Menu as MenuIcon, Psychology} from '@mui/icons-material';
+import { Close as CloseIcon, Menu as MenuIcon } from '@mui/icons-material';
+
+const navItems = [
+    { name: 'Services', href: '#services' },
+    { name: 'About', href: '#about' },
+    { name: 'Contact', href: '#contact' },
+];
+
 const Navbar: React.FC = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    // const theme = useTheme();
-    // const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-
-    const navItems = [
-        {name: 'Services', href: '#services', icon: <Code/>},
-        {name: 'AI/ML', href: '#ai-ml', icon: <Psychology/>},
-        {name: 'Automation', href: '#automation', icon: <AutoAwesome/>},
-        {name: 'Contact', href: '#contact', icon: <ContactMail/>},
-    ];
 
     useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
+        const handleScroll = () => setScrolled(window.scrollY > 20);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const handleDrawerToggle = () => {
-        setMobileOpen(!mobileOpen);
-    };
+    const handleDrawerToggle = () => setMobileOpen((v) => !v);
 
     const scrollToSection = (href: string) => {
         const element = document.querySelector(href);
-        if (element) {
-            element.scrollIntoView({behavior: 'smooth'});
-        }
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
         setMobileOpen(false);
     };
 
     const drawer = (
-        <Box sx={{width: 250, height: '100%', background: 'linear-gradient(145deg, #1A1A1A 0%, #2A2A2A 100%)'}}>
-            <Box sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', p: 2}}>
-                <Typography variant="h6" sx={{fontWeight: 700, color: '#00D4FF'}}>
+        <Box sx={{ width: 260, height: '100%', background: '#0d1120' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', p: 2 }}>
+                <Typography sx={{ fontFamily: 'Sora, sans-serif', fontWeight: 800, fontSize: '1.25rem' }}>
                     Kyntri
                 </Typography>
-                <IconButton onClick={handleDrawerToggle} sx={{color: 'white'}}>
-                    <CloseIcon/>
+                <IconButton onClick={handleDrawerToggle} sx={{ color: 'white' }}>
+                    <CloseIcon />
                 </IconButton>
             </Box>
             <List>
@@ -62,22 +50,9 @@ const Navbar: React.FC = () => {
                     <ListItem
                         key={item.name}
                         onClick={() => scrollToSection(item.href)}
-                        sx={{
-                            cursor: 'pointer',
-                            '&:hover': {
-                                backgroundColor: 'rgba(0, 212, 255, 0.1)',
-                            },
-                        }}
+                        sx={{ cursor: 'pointer', '&:hover': { backgroundColor: 'rgba(139,92,246,0.1)' } }}
                     >
-                        <ListItemText
-                            primary={item.name}
-                            sx={{
-                                color: 'white',
-                                '& .MuiListItemText-primary': {
-                                    fontWeight: 500,
-                                },
-                            }}
-                        />
+                        <ListItemText primary={item.name} sx={{ color: '#c3c8d9' }} />
                     </ListItem>
                 ))}
             </List>
@@ -86,154 +61,96 @@ const Navbar: React.FC = () => {
 
     return (
         <>
-            <AppBar
-                position="fixed"
+            <Box
+                component="nav"
                 sx={{
-                    background: scrolled
-                        ? 'rgba(10, 10, 10, 0.95)'
-                        : 'rgba(10, 10, 10, 0.8)',
-                    backdropFilter: 'blur(20px)',
-                    boxShadow: scrolled
-                        ? '0 4px 20px rgba(0, 0, 0, 0.3)'
-                        : 'none',
-                    borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-                    transition: 'all 0.3s ease',
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    zIndex: 50,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    px: { xs: 3, md: 8 },
+                    py: 2.5,
+                    background: scrolled ? 'rgba(9,12,22,0.85)' : 'rgba(9,12,22,0.72)',
+                    backdropFilter: 'blur(14px)',
+                    borderBottom: '1px solid rgba(255,255,255,0.06)',
                 }}
             >
-                <Toolbar sx={{py: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-                    {/* Left - Logo and Name */}
-                    <motion.div
-                        initial={{opacity: 0, x: -20}}
-                        animate={{opacity: 1, x: 0}}
-                        transition={{duration: 0.6}}
-                    >
-                        <Box sx={{display: 'flex', alignItems: 'center'}}>
-                            <Box
-                                sx={{
-                                    width: 40,
-                                    height: 40,
-                                    borderRadius: 2,
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    mr: 2,
-                                }}
-                            >
-                                <img style={{width: "40px", height: "40px"}} src="logo.png"/>
-                            </Box>
-                            <Typography
-                                variant="h5"
-                                sx={{
-                                    fontWeight: 700,
-                                    background: 'rgb(0, 212, 255)',
-                                    backgroundClip: 'text',
-                                    WebkitBackgroundClip: 'text',
-                                    WebkitTextFillColor: 'transparent',
-                                }}
-                            >
-                                KYNTRI
-                            </Typography>
-                        </Box>
-                    </motion.div>
-
-                    {/* Center - Desktop Navigation */}
-                    <Box sx={{display: {xs: 'none', md: 'flex'}, alignItems: 'center', gap: 1, position: 'absolute', left: '50%', transform: 'translateX(-50%)'}}>
-                        {navItems.map((item, index) => (
-                            <motion.div
-                                key={item.name}
-                                initial={{opacity: 0, y: -20}}
-                                animate={{opacity: 1, y: 0}}
-                                transition={{duration: 0.6, delay: index * 0.1}}
-                            >
-                                <Button
-                                    onClick={() => scrollToSection(item.href)}
-                                    sx={{
-                                        color: 'white',
-                                        fontWeight: 500,
-                                        px: 2,
-                                        py: 1,
-                                        borderRadius: 2,
-                                        textTransform: 'none',
-                                        fontSize: '1rem',
-                                        '&:hover': {
-                                            background: 'rgba(0, 212, 255, 0.1)',
-                                            color: '#00D4FF',
-                                            transform: 'translateY(-2px)',
-                                        },
-                                    }}
-                                >
-                                    {item.name}
-                                </Button>
-                            </motion.div>
-                        ))}
-                    </Box>
-
-                    {/* Right - Get Started Button */}
-                    <Box sx={{display: {xs: 'none', md: 'block'}}}>
-                        <motion.div
-                            initial={{opacity: 0, scale: 0.8}}
-                            animate={{opacity: 1, scale: 1}}
-                            transition={{duration: 0.6, delay: 0.4}}
-                        >
-                            {/*<Button*/}
-                            {/*    variant="contained"*/}
-                            {/*    onClick={() => scrollToSection('#contact')}*/}
-                            {/*    sx={{*/}
-                            {/*        background: 'linear-gradient(black, black) padding-box, linear-gradient(317deg, rgba(0, 51, 255, 1) 19%, rgba(251, 0, 255, 1) 65%) border-box',*/}
-                            {/*        border: '2px solid transparent',*/}
-                            {/*        borderRadius: 3,*/}
-                            {/*        color:"#FFFFFF",*/}
-                            {/*        px: 3,*/}
-                            {/*        py: 1,*/}
-                            {/*        fontWeight: 600,*/}
-                            {/*        textTransform: 'none',*/}
-                            {/*        transition: 'all 0.4s ease',*/}
-                            {/*        '&:hover': {*/}
-                            {/*            background: 'linear-gradient(black, black) padding-box, linear-gradient(137deg, rgba(251, 0, 255, 1) 19%, rgba(0, 51, 255, 1) 65%) border-box',*/}
-                            {/*            transform: 'translateY(-2px)',*/}
-                            {/*            boxShadow: '0 0 12px rgba(0, 51, 255, 0.4)',*/}
-                            {/*        },*/}
-                            {/*    }}*/}
-
-                            {/*>*/}
-                            {/*    Get Started*/}
-                            {/*</Button>*/}
-                        </motion.div>
-                    </Box>
-
-                    {/* Mobile Menu Button */}
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        edge="start"
-                        onClick={handleDrawerToggle}
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25 }}>
+                    <Box
+                        component="img"
+                        src="/logo.png"
+                        alt="Kyntri logo"
                         sx={{
-                            display: {md: 'none'},
-                            color: 'white',
+                            width: 32,
+                            height: 32,
+                            filter: 'drop-shadow(0 0 10px rgba(139,92,246,0.55))',
                         }}
-                    >
-                        <MenuIcon/>
-                    </IconButton>
-                </Toolbar>
-            </AppBar>
+                    />
+                    <Typography sx={{ fontFamily: 'Sora, sans-serif', fontWeight: 800, fontSize: '1.375rem', letterSpacing: '-0.02em' }}>
+                        Kyntri
+                    </Typography>
+                </Box>
 
-            {/* Mobile Drawer */}
+                <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 5 }}>
+                    {navItems.map((item) => (
+                        <Box
+                            key={item.name}
+                            component="button"
+                            onClick={() => scrollToSection(item.href)}
+                            sx={{
+                                background: 'none',
+                                border: 'none',
+                                cursor: 'pointer',
+                                fontFamily: 'Inter, sans-serif',
+                                fontSize: '0.9375rem',
+                                color: '#c3c8d9',
+                                '&:hover': { color: '#8b5cf6' },
+                            }}
+                        >
+                            {item.name}
+                        </Box>
+                    ))}
+                </Box>
+
+                <Button
+                    onClick={() => scrollToSection('#contact')}
+                    sx={{
+                        display: { xs: 'none', md: 'inline-flex' },
+                        px: 3.25,
+                        py: 1.25,
+                        borderRadius: 999,
+                        border: '1px solid transparent',
+                        background: 'linear-gradient(#090c16,#090c16) padding-box, linear-gradient(90deg,#ec4899,#8b5cf6,#22d3ee) border-box',
+                        fontWeight: 600,
+                        fontSize: '0.875rem',
+                        color: '#fff',
+                    }}
+                >
+                    Get Started
+                </Button>
+
+                <IconButton
+                    onClick={handleDrawerToggle}
+                    sx={{ display: { md: 'none' }, color: 'white' }}
+                    aria-label="open menu"
+                >
+                    <MenuIcon />
+                </IconButton>
+            </Box>
+
             <Drawer
                 variant="temporary"
                 anchor="right"
                 open={mobileOpen}
                 onClose={handleDrawerToggle}
-                ModalProps={{
-                    keepMounted: true, // Better open performance on mobile.
-                }}
+                ModalProps={{ keepMounted: true }}
                 sx={{
-                    display: {xs: 'block', md: 'none'},
-                    '& .MuiDrawer-paper': {
-                        boxSizing: 'border-box',
-                        width: 250,
-                        background: 'linear-gradient(145deg, #1A1A1A 0%, #2A2A2A 100%)',
-                        border: 'none',
-                    },
+                    display: { xs: 'block', md: 'none' },
+                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 260, background: '#0d1120', border: 'none' },
                 }}
             >
                 {drawer}
