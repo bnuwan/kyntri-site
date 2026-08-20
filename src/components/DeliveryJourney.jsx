@@ -28,7 +28,10 @@ function DeliveryJourney() {
   ];
 
   return (
-    <section className="bg-[#07101f] py-16 sm:py-20 lg:py-28">
+    <section
+      id="process"
+      className="bg-[#07101f] py-16 sm:py-20 lg:py-28"
+    >
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
         {/* Header */}
@@ -41,83 +44,86 @@ function DeliveryJourney() {
 
           <h2
             className="
-            text-4xl
-            sm:text-5xl
-            lg:text-6xl
-            font-bold
-            leading-tight
-          "
+              text-4xl
+              sm:text-5xl
+              lg:text-6xl
+              font-bold
+              leading-tight
+            "
           >
             Our Delivery Journey
           </h2>
 
         </div>
 
+
         {/* Cards */}
 
         <div
           className="
-          grid
-          grid-cols-1
-          sm:grid-cols-2
-          xl:grid-cols-5
-          gap-6
-        "
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            xl:grid-cols-5
+            gap-6
+          "
         >
           {steps.map((step) => (
             <div
               key={step.number}
               className="
-              group
-              relative
-              rounded-3xl
-              border
-              border-white/10
-              bg-white/5
-              p-6
-              transition-all
-              duration-300
-              hover:-translate-y-2
-              hover:border-cyan-400/40
-              hover:bg-white/[0.06]
+                group
+                relative
+                rounded-3xl
+                border
+                border-white/10
+                bg-white/5
+                p-6
+                transition-all
+                duration-300
+                hover:-translate-y-2
+                hover:border-cyan-400/40
+                hover:bg-white/[0.06]
               "
             >
+
               <div
                 className="
-                mb-4
-                text-4xl
-                sm:text-5xl
-                font-black
-                text-cyan-400/30
-                transition-all
-                group-hover:text-cyan-400/50
-              "
+                  mb-4
+                  text-4xl
+                  sm:text-5xl
+                  font-black
+                  text-cyan-400/30
+                  transition-all
+                  group-hover:text-cyan-400/50
+                "
               >
                 {step.number}
               </div>
 
               <h3
                 className="
-                mb-4
-                text-lg
-                sm:text-xl
-                font-bold
-                leading-snug
-              "
+                  mb-4
+                  text-lg
+                  sm:text-xl
+                  font-bold
+                  leading-snug
+                "
               >
                 {step.title}
               </h3>
 
               <p
                 className="
-                text-sm
-                sm:text-base
-                leading-7
-                text-gray-400
-              "
+                  text-sm
+                  sm:text-base
+                  leading-7
+                  text-gray-400
+                "
               >
                 {step.desc}
               </p>
+
             </div>
           ))}
         </div>

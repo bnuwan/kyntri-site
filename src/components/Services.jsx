@@ -3,7 +3,10 @@ import { services } from "../data/services";
 
 function Services() {
   return (
-    <section className="bg-[#020817] py-16 sm:py-20 lg:py-24">
+    <section
+      id="services"
+      className="bg-[#020817] py-16 sm:py-20 lg:py-24"
+    >
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
 
         {/* Heading */}
@@ -17,6 +20,7 @@ function Services() {
           <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-8">
 
             <div className="max-w-3xl">
+
               <h2
                 className="
                   font-bold
@@ -33,6 +37,7 @@ function Services() {
                   Technology Services
                 </span>
               </h2>
+
             </div>
 
             <p
@@ -52,6 +57,7 @@ function Services() {
           </div>
 
         </div>
+
 
         {/* Cards */}
 

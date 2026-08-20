@@ -1,6 +1,17 @@
 import HeroVisual from "./HeroVisual";
 
 function Hero() {
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <section className="relative overflow-hidden bg-[#080A16] min-h-screen">
       {/* Background Glow */}
@@ -40,9 +51,11 @@ function Hero() {
         "
       >
         <div className="grid w-full items-center gap-10 lg:grid-cols-2">
+
           {/* LEFT */}
 
           <div>
+
             {/* Badge */}
 
             <div
@@ -65,6 +78,7 @@ function Hero() {
               </span>
             </div>
 
+
             {/* Heading */}
 
             <h1
@@ -86,6 +100,7 @@ function Hero() {
               cloud era
             </h1>
 
+
             {/* Description */}
 
             <p
@@ -102,10 +117,16 @@ function Hero() {
               without limits.
             </p>
 
+
             {/* Buttons */}
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+
+              {/* GET STARTED */}
+
               <button
+                type="button"
+                onClick={() => scrollToSection("contact")}
                 className="
                   rounded-full
                   border
@@ -120,12 +141,19 @@ function Hero() {
                   transition
                   duration-300
                   hover:scale-105
+                  hover:border-cyan-300
+                  cursor-pointer
                 "
               >
                 Get Started →
               </button>
 
+
+              {/* EXPLORE SERVICES */}
+
               <button
+                type="button"
+                onClick={() => scrollToSection("services")}
                 className="
                   rounded-full
                   border
@@ -135,17 +163,24 @@ function Hero() {
                   font-semibold
                   text-white
                   transition
+                  duration-300
                   hover:border-cyan-400
+                  hover:text-cyan-300
+                  cursor-pointer
                 "
               >
                 Explore Services
               </button>
+
             </div>
+
           </div>
+
 
           {/* RIGHT */}
 
           <HeroVisual />
+
         </div>
       </div>
     </section>
