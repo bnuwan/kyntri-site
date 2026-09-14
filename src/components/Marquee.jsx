@@ -1,26 +1,22 @@
-const items = [
-  "AI SOLUTIONS",
-  "CLOUD SERVICES",
-  "BUSINESS AUTOMATION",
-  "DATA ANALYTICS",
-  "SOFTWARE ENGINEERING",
-  "MACHINE LEARNING",
+﻿const items = [
+  "AI Solutions",
+  "Cloud Services",
+  "Business Automation",
+  "Data Analytics",
+  "Software Engineering",
+  "Machine Learning",
 ];
 
 function Marquee() {
   return (
-    <section className="relative overflow-hidden bg-black border-y border-cyan-500/10 py-4">
-
+    <section className="relative overflow-hidden border-y border-cyan-500/10 bg-black py-4">
       <div className="marquee-track">
-
         {[...items, ...items].map((item, index) => (
           <span key={index} className="marquee-item">
             {item}
           </span>
         ))}
-
       </div>
-
     </section>
   );
 }

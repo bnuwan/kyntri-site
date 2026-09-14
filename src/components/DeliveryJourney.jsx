@@ -1,4 +1,4 @@
-function DeliveryJourney() {
+﻿function DeliveryJourney() {
   const steps = [
     {
       number: "01",
@@ -30,7 +30,7 @@ function DeliveryJourney() {
   return (
     <section
       id="process"
-      className="bg-[#07101f] py-16 sm:py-20 lg:py-28"
+      className="bg-[#020817] py-12 sm:py-16 lg:py-20"
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 

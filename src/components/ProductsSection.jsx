@@ -1,9 +1,9 @@
-import ProductCard from "./ProductCard";
+﻿import ProductCard from "./ProductCard";
 import { products } from "../data/products";
 
 function ProductsSection() {
   return (
-    <section className="bg-[#0f1420] py-16 sm:py-20 lg:py-32">
+    <section className="bg-[#020817] py-12 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
         {/* Section Header */}
@@ -43,7 +43,7 @@ function ProductsSection() {
             text-gray-400
           "
           >
-            Beyond client work, we build and operate our own platforms —
+            Beyond client work, we build and operate our own platforms â€”
             real products solving real operational problems across retail,
             events, automotive, and AI.
           </p>

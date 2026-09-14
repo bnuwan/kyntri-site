@@ -1,21 +1,21 @@
-export const products = [
+﻿export const products = [
   {
-    title: "mPOS FOR RETAIL",
+    title: "mPOS For Retail",
     icon: "cart",
     link: "/mpos",
     color: "border-purple-500",
     description:
       "Transform the way you manage transactions with a powerful mobile-first billing experience.",
     features: [
-      "BAR CODE SCANNING",
-      "SIMPLIFIED BILLING",
-      "INVENTORY MANAGEMENT",
-      "DIGITAL INVOICE",
-      "AI ASSISTANCE",
+      "Bar Code Scanning",
+      "Simplified Billing",
+      "Inventory Management",
+      "Digital Invoice",
+      "AI Assistance",
     ],
   },
   {
-    title: "E TICKETING FOR EVENT MANAGEMENT",
+    title: "E Ticketing For Event Management",
     icon: "ticket",
     link: "/eventflow",
     color: "border-indigo-500",
@@ -29,7 +29,7 @@ export const products = [
     ],
   },
   {
-    title: "GARAGE MANAGEMENT PLATFORM",
+    title: "Garage Management Platform",
     icon: "wrench",
     link: "/garage",
     color: "border-yellow-500",
@@ -43,7 +43,7 @@ export const products = [
     ],
   },
   {
-    title: "AGENTIC AI WORKFLOW AUTOMATION",
+    title: "Agentic AI Workflow Automation",
     icon: "bot",
     link: "/agentic-ai",
     color: "border-orange-500",

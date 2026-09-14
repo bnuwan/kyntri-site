@@ -1,4 +1,4 @@
-import GymCanvas from "./GymCanvas";
+﻿import GymCanvas from "./GymCanvas";
 
 function LiftlySection() {
   return (
@@ -31,17 +31,13 @@ function LiftlySection() {
                 lg:text-7xl
               "
             >
-              THE ALL-IN-ONE
-
+              The All-In-One
               <br />
-
               <span className="text-cyan-400">
-                PLATFORM
+                Platform
               </span>
-
               <br />
-
-              FOR YOUR GYM
+              For Your Gym
             </h2>
 
             <p

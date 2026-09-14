@@ -1,4 +1,4 @@
-import {
+﻿import {
   CheckCircle2,
   Play,
   Search,
@@ -33,7 +33,7 @@ function AutomationSection() {
   return (
     <section
       id="automation"
-      className="relative overflow-hidden bg-[#050816] py-16 sm:py-20 lg:py-28"
+      className="relative overflow-hidden bg-[#020817] py-12 sm:py-16 lg:py-20"
     >
       {/* Background */}
 
@@ -94,7 +94,7 @@ function AutomationSection() {
 
               Kyntri's agentic platform deploys AI agents that
               understand context, choose the next best action,
-              and execute across your existing tools —
+              and execute across your existing tools â€”
               then learn from every run.
             </p>
 
@@ -232,7 +232,7 @@ function AutomationSection() {
                     </h4>
 
                     <p className="mt-1 text-sm sm:text-base text-gray-400">
-                      New Lead • CRM
+                      New Lead â€¢ CRM
                     </p>
 
                   </div>
@@ -294,7 +294,7 @@ function AutomationSection() {
                     </h4>
 
                     <p className="mt-1 text-sm sm:text-base text-green-400">
-                      Approved • Confidence 0.94
+                      Approved â€¢ Confidence 0.94
                     </p>
 
                   </div>
@@ -363,7 +363,7 @@ function AutomationSection() {
                     </h4>
 
                     <p className="mt-1 text-sm sm:text-base text-gray-400">
-                      Sync → CRM
+                      Sync â†’ CRM
                     </p>
 
                   </div>
@@ -400,7 +400,7 @@ function AutomationSection() {
                 text-gray-500
               "
               >
-                Model Agnostic — The Right Model For Each Task
+                Model Agnostic â€” The Right Model For Each Task
               </p>
 
               <div className="flex flex-wrap justify-center gap-2 sm:gap-3">

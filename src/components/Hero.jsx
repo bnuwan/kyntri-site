@@ -1,4 +1,4 @@
-import HeroVisual from "./HeroVisual";
+﻿import HeroVisual from "./HeroVisual";
 
 function Hero() {
   const scrollToSection = (id) => {
@@ -13,7 +13,7 @@ function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#080A16] min-h-screen">
+    <section className="relative overflow-hidden bg-[#020817] min-h-screen">
       {/* Background Glow */}
 
       <div className="absolute inset-0">
@@ -95,9 +95,9 @@ function Hero() {
             >
               Engineering
               <br />
-              intelligence for the
+              Intelligence For
               <br />
-              cloud era
+              The Cloud Era
             </h1>
 
 
@@ -145,7 +145,7 @@ function Hero() {
                   cursor-pointer
                 "
               >
-                Get Started →
+                Get Started â†’
               </button>
 
 
@@ -188,3 +188,4 @@ function Hero() {
 }
 
 export default Hero;
+

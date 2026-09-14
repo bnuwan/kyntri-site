@@ -1,4 +1,4 @@
-function ServiceCard({ service }) {
+﻿function ServiceCard({ service }) {
   const Icon = service.icon;
 
   return (
@@ -58,24 +58,6 @@ function ServiceCard({ service }) {
         to-blue-500/5
         "
       />
-
-      {/* Number */}
-      <span
-        className="
-        absolute
-        right-5
-        top-5
-        text-4xl
-        lg:text-5xl
-        font-light
-        text-cyan-500/20
-        transition-all
-        duration-500
-        group-hover:text-cyan-400/40
-        "
-      >
-        {service.id}
-      </span>
 
       {/* Icon */}
       <div
@@ -195,3 +177,4 @@ function ServiceCard({ service }) {
 }
 
 export default ServiceCard;
+
