@@ -1,4 +1,8 @@
-﻿function ContactSection() {
+﻿import { useState } from "react";
+
+function ContactSection() {
+  const [submitted, setSubmitted] = useState(false);
+
   const contacts = [
     {
       name: "Thejitha",
@@ -29,15 +33,7 @@
               Start a Project
             </p>
 
-            <h2
-              className="
-                text-4xl
-                font-black
-                leading-tight
-                sm:text-5xl
-                lg:text-6xl
-              "
-            >
+            <h2 className="text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">
               Your Vision.
               <br />
               <span className="text-cyan-400">
@@ -45,19 +41,7 @@
               </span>
             </h2>
 
-            <p
-              className="
-                mx-auto
-                mt-6
-                max-w-xl
-                text-base
-                leading-7
-                text-gray-400
-                sm:text-lg
-                sm:leading-8
-                lg:mx-0
-              "
-            >
+            <p className="mx-auto mt-6 max-w-xl text-base leading-7 text-gray-400 sm:text-lg sm:leading-8 lg:mx-0">
               Tell us about your idea, business challenge,
               or digital transformation initiative.
               We'll help you design and build a scalable solution.
@@ -110,6 +94,7 @@
                     </p>
 
                     <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+
                       {/* PHONE */}
 
                       <a
@@ -157,7 +142,7 @@
             </div>
           </div>
 
-          {/* RIGHT SIDE */}
+          {/* RIGHT SIDE - INQUIRY FORM */}
 
           <div
             className="
@@ -169,11 +154,40 @@
               sm:p-8
             "
           >
-            <div className="space-y-5">
+            <form
+              action="https://formsubmit.co/info@kyntri.net"
+              method="POST"
+              onSubmit={() => setSubmitted(true)}
+              className="space-y-5"
+            >
+
+              {/* FormSubmit settings */}
+
+              <input
+                type="hidden"
+                name="_subject"
+                value="New Customer Inquiry - Kyntri"
+              />
+
+              <input
+                type="hidden"
+                name="_captcha"
+                value="false"
+              />
+
+              <input
+                type="hidden"
+                name="_template"
+                value="table"
+              />
+
+              {/* NAME */}
 
               <input
                 type="text"
+                name="name"
                 placeholder="Your Name"
+                required
                 className="
                   w-full
                   rounded-xl
@@ -187,10 +201,14 @@
                   focus:border-cyan-400
                 "
               />
+
+              {/* EMAIL */}
 
               <input
                 type="email"
+                name="email"
                 placeholder="Email Address"
+                required
                 className="
                   w-full
                   rounded-xl
@@ -205,8 +223,11 @@
                 "
               />
 
+              {/* COMPANY */}
+
               <input
                 type="text"
+                name="company"
                 placeholder="Company"
                 className="
                   w-full
@@ -222,7 +243,11 @@
                 "
               />
 
+              {/* PROJECT TYPE */}
+
               <select
+                name="project_type"
+                defaultValue="Project Type"
                 className="
                   w-full
                   rounded-xl
@@ -236,16 +261,34 @@
                   focus:border-cyan-400
                 "
               >
-                <option>Project Type</option>
-                <option>AI Solution</option>
-                <option>Software Development</option>
-                <option>Cloud Infrastructure</option>
-                <option>Data Analytics</option>
+                <option value="Project Type">
+                  Project Type
+                </option>
+
+                <option value="AI Solution">
+                  AI Solution
+                </option>
+
+                <option value="Software Development">
+                  Software Development
+                </option>
+
+                <option value="Cloud Infrastructure">
+                  Cloud Infrastructure
+                </option>
+
+                <option value="Data Analytics">
+                  Data Analytics
+                </option>
               </select>
 
+              {/* MESSAGE */}
+
               <textarea
+                name="message"
                 rows={5}
                 placeholder="Tell us about your project..."
+                required
                 className="
                   w-full
                   rounded-xl
@@ -260,8 +303,10 @@
                 "
               />
 
+              {/* SUBMIT */}
+
               <button
-                type="button"
+                type="submit"
                 className="
                   w-full
                   rounded-xl
@@ -277,7 +322,13 @@
                 Submit Inquiry
               </button>
 
-            </div>
+              {submitted && (
+                <p className="text-center text-sm text-cyan-400">
+                  Sending your inquiry to Kyntri...
+                </p>
+              )}
+
+            </form>
           </div>
 
         </div>
